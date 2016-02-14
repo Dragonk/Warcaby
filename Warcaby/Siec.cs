@@ -402,9 +402,7 @@ namespace Warcaby
 			{0, 0, 0, 0, 2, 2, 0, 0, -2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1};
 			this.trainingSet [115] = new double[28]
 			{0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1};
-			this.trainingSet [116] = new double[28]
-			{0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0};
-			this.iloscZestawow = 116;
+			this.iloscZestawow = 115;
 			for (int i = 0; i < 8; i++)
 				this.w [i] = new double[18];
 			for (int i = 0; i < 10; i++)
