@@ -613,37 +613,37 @@ namespace Warcaby
 					setButtons ();
 				}
 			} else if ((this.tura == 1) && (this.vsGracz == false)) {
-					if (this.tablica [this.zlapany] == -1) {
-						this.tablica [this.zlapany] = 0;
-						this.tablica [a] = -1;
-						this.zlapany = -1;
-						this.tura = 2;
-						setButtons ();
-						ruchKomputera ();
-					} else if (this.tablica [this.zlapany] == -2) {
-						this.tablica [this.zlapany] = 0;
-						this.tablica [a] = -2;
-						this.zlapany = -1;
-						this.tura = 2;
-						setButtons ();
-						ruchKomputera ();
-					}
-				} else if ((this.tura == 2) && (this.vsGracz == false)) {
-				if (this.tablica [this.zlapany] == 1) {
-						this.generuj.nowyZestaw(this.tab,this.zlapany,a);
-						this.tablica [this.zlapany] = 0;
-						this.tablica [a] = 1;
-						this.zlapany = -1;
-						this.tura = 1;
-						setButtons ();
-					} else if (this.tablica [this.zlapany] == 2) {
-						this.generuj.nowyZestaw(this.tab,this.zlapany,a);
-						this.tablica [this.zlapany] = 0;
-						this.tablica [a] = 2;
-						this.zlapany = -1;
-						this.tura = 1;
-						setButtons ();
-					}
+				if (this.tablica [this.zlapany] == -1) {
+					this.tablica [this.zlapany] = 0;
+					this.tablica [a] = -1;
+					this.zlapany = -1;
+					this.tura = 2;
+					setButtons ();
+					ruchKomputera ();
+				} else if (this.tablica [this.zlapany] == -2) {
+					this.tablica [this.zlapany] = 0;
+					this.tablica [a] = -2;
+					this.zlapany = -1;
+					this.tura = 2;
+					setButtons ();
+					ruchKomputera ();
+				}
+			} else if ((this.tura == 2) && (this.vsGracz == false)) {
+			if (this.tablica [this.zlapany] == 1) {
+					this.generuj.nowyZestaw(this.tab,this.zlapany,a);
+					this.tablica [this.zlapany] = 0;
+					this.tablica [a] = 1;
+					this.zlapany = -1;
+					this.tura = 1;
+					setButtons ();
+				} else if (this.tablica [this.zlapany] == 2) {
+					this.generuj.nowyZestaw(this.tab,this.zlapany,a);
+					this.tablica [this.zlapany] = 0;
+					this.tablica [a] = 2;
+					this.zlapany = -1;
+					this.tura = 1;
+					setButtons ();
+				}
 			}
 		}
 
