@@ -5,17 +5,12 @@ namespace Warcaby
 {
 	public partial class MainWindow: Gtk.Window
 	{
-		private int[] _tablica = new int[18];
+		private int[] tablica = new int[18];
+		private int[] tab = new int[18]; //bufor tablicy
 		private int zlapany = -1;
 		private bool vsGracz = false;
 		private int tura;
 		private Siec generuj = new Siec();
-		public int[] tablica
-		{
-			get { return _tablica; }
-			set { _tablica = value;
-				setButtons (); }
-		}
 		public MainWindow () : base (Gtk.WindowType.Toplevel)
 		{
 			Build ();
@@ -601,6 +596,7 @@ namespace Warcaby
 				}
 			} else if ((this.tura == 2) && (this.vsGracz == true)) {
 				if (this.tablica [this.zlapany] == 1) {
+					this.generuj.nowyZestaw(this.tab,this.zlapany,a);
 					this.tablica [this.zlapany] = 0;
 					this.tablica [a] = 1;
 					this.zlapany = -1;
@@ -608,6 +604,7 @@ namespace Warcaby
 					this.label5.LabelProp = "Tura Gracza 1";
 					setButtons ();
 				} else if (this.tablica [this.zlapany] == 2) {
+					this.generuj.nowyZestaw(this.tab,this.zlapany,a);
 					this.tablica [this.zlapany] = 0;
 					this.tablica [a] = 2;
 					this.zlapany = -1;
@@ -632,13 +629,15 @@ namespace Warcaby
 						ruchKomputera ();
 					}
 				} else if ((this.tura == 2) && (this.vsGracz == false)) {
-					if (this.tablica [this.zlapany] == 1) {
+				if (this.tablica [this.zlapany] == 1) {
+						this.generuj.nowyZestaw(this.tab,this.zlapany,a);
 						this.tablica [this.zlapany] = 0;
 						this.tablica [a] = 1;
 						this.zlapany = -1;
 						this.tura = 1;
 						setButtons ();
 					} else if (this.tablica [this.zlapany] == 2) {
+						this.generuj.nowyZestaw(this.tab,this.zlapany,a);
 						this.tablica [this.zlapany] = 0;
 						this.tablica [a] = 2;
 						this.zlapany = -1;
@@ -656,6 +655,7 @@ namespace Warcaby
 					ilosc = ilosc + 1;
 			}
 			if (ilosc > 0) {
+				this.tab = this.tablica;
 				//Odwołanie do sztucznej inteligencji
 				do {
 					this.generuj.trenuj();
@@ -679,6 +679,7 @@ namespace Warcaby
 			}
 			if (ilosc>0)
 			if ((this.tura == 2) && (this.vsGracz == false)) {
+				this.tab = this.tablica;
 			//Odwołanie do sztucznej inteligencji
 				do {
 					this.generuj.trenuj();
